@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: safeschoolbus-kashmir
+    runtime: node
+    plan: free
+    buildCommand: npm install && cd frontend && npm install && npm run build
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SENDGRID_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_FROM_NAME
+        value: Safe School Bus Kashmir
+    autoDeploy: true
+    healthCheckPath: /api/health

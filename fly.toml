@@ -1,0 +1,26 @@
+app = "safeschoolbus-kashmir"
+primary_region = "iad"
+
+[build]
+  builder = "heroku/buildpacks:20"
+
+[env]
+  NODE_ENV = "production"
+  PORT = "3000"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[services.http_checks]]
+  interval = 10000
+  timeout = 5000
+  path = "/api/health"
+
+[[services.tcp_checks]]
+  interval = 10000
+  timeout = 5000

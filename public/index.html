@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c3150" />
+    <title>Safe School Bus Kashmir</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#parent" aria-label="Safe School Bus Kashmir home">
+          <span class="brand-mark" aria-hidden="true">SB</span>
+          <span><strong>Safe School Bus</strong><small>Kashmir pilot</small></span>
+        </a>
+
+        <p class="nav-label">Role-based access</p>
+        <nav class="main-nav">
+          <button class="nav-link is-active" data-role-view="parent" data-view-target="parent" type="button"><span>⌖</span> Parent view</button>
+          <button class="nav-link" data-role-view="school" data-view-target="school" type="button"><span>▦</span> School dashboard</button>
+          <button class="nav-link" data-role-view="rto" data-view-target="rto" type="button"><span>◫</span> RTO summary</button>
+          <button class="nav-link" data-role-view="driver" data-view-target="driver" type="button"><span>⌁</span> Driver trip app</button>
+        </nav>
+
+        <div class="pilot-card">
+          <span class="eyebrow">Pilot model</span>
+          <strong>5–10 schools<br />25–50 vehicles</strong>
+          <p>Register routes, stops, vehicles, drivers and attendants. Review alerts each week.</p>
+        </div>
+        <p class="sidebar-note" id="session-user">Tracking is enabled only during official school trips.</p>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">RTO Kashmir · school transport safety pilot</p>
+            <h1 id="view-title">Your child’s assigned bus</h1>
+          </div>
+          <div class="topbar-actions"><button class="outline-button enable-alerts" id="enable-alerts" type="button">Enable alerts</button><div class="trip-status" id="global-trip-status"><i></i><span>Official trip active</span></div></div>
+        </header>
+
+        <section class="view is-visible" id="parent" data-view-title="Your child’s assigned bus">
+          <div class="notice notice-private">
+            <span class="notice-icon">✓</span>
+            <div><strong>Private, assigned-bus access</strong><p>You can view only the bus assigned to your child during its active school trip. This map is never public.</p></div>
+          </div>
+
+          <div class="parent-layout">
+            <article class="route-card surface">
+              <div class="card-heading">
+                <div>
+                  <span class="eyebrow">Active morning trip</span>
+                  <h2 id="parent-vehicle-name">JK01 AB 2411 <span class="soft-tag">On route</span></h2>
+                </div>
+                <span class="text-button">Assigned trip only</span>
+              </div>
+
+              <div class="route-map" id="route-map" aria-label="Illustrative private route status map">
+                <div class="google-map" id="google-map" aria-label="Assigned bus live map"></div>
+                <span class="map-label label-school">Pine Valley School</span>
+                <span class="map-label label-home">Home stop</span>
+                <span class="map-label label-stop">Hazratbal stop</span>
+                <span class="route-line line-one"></span><span class="route-line line-two"></span>
+                <span class="route-stop start"></span><span class="route-stop middle"></span><span class="route-stop end"></span>
+                <span class="bus-marker" id="bus-marker" title="Assigned bus" aria-label="Assigned bus current position">▰</span>
+                <div class="trip-ended-overlay" id="trip-ended-overlay">No official trip is active.<small>Live location sharing is off.</small></div>
+              </div>
+              <div class="map-caption"><span><i class="pulse-dot"></i>Location shared during active trip</span><span id="last-location">Updated just now</span></div>
+            </article>
+
+            <aside class="arrival-card">
+              <span class="eyebrow">Live bus status</span>
+              <h2 id="parent-journey-title">Arriving at school</h2>
+              <p class="arrival-time" id="parent-arrival-time">09:05 <span>estimated</span></p>
+              <div class="status-row"><span>Current speed</span><strong id="parent-speed">31 km/h</strong></div>
+              <div class="status-row"><span>Route status</span><strong class="safe-text" id="parent-route-status">On planned route</strong></div>
+              <div class="status-row"><span>Driver app</span><strong class="safe-text" id="parent-gps-status">Location active</strong></div>
+            </aside>
+          </div>
+
+          <div class="grid-two parent-bottom">
+            <article class="surface card-pad">
+              <div class="card-heading compact"><div><span class="eyebrow">Safety updates</span><h2>Trip alerts</h2></div><span class="count-badge">1 update</span></div>
+              <div id="parent-alert-list"><div class="parent-alert"><span class="alert-symbol info">i</span><div><strong>Trip started successfully</strong><p>Driver started this official school trip before movement at 08:26.</p></div><time>08:26</time></div></div>
+              <p class="quiet-note">You will receive delay, unexpected-stop and safety updates for this assigned bus.</p>
+            </article>
+
+            <article class="surface card-pad">
+              <span class="eyebrow">Complaint channel</span>
+              <h2>Report a transport concern</h2>
+              <form id="complaint-form" class="complaint-form">
+                <label>Concern type<select id="complaint-type" required><option>Unsafe driving</option><option>Route concern</option><option>Delay</option><option>Other transport concern</option></select></label>
+                <label>Brief description<textarea id="complaint-text" maxlength="240" required placeholder="Describe the concern for the school transport team"></textarea></label>
+                <div class="form-row"><span class="form-privacy">Linked privately to JK01 AB 2411</span><button class="primary-button" type="submit">Submit report</button></div>
+              </form>
+              <p class="form-result" id="complaint-result" aria-live="polite"></p>
+            </article>
+          </div>
+
+          <article class="safeguard-strip">
+            <div><span class="strip-icon">◉</span><strong>Track the bus, not the child</strong><p>No child location is collected.</p></div>
+            <div><span class="strip-icon">◌</span><strong>Guardian mapping consent</strong><p>Confirmed for this account.</p></div>
+            <div><span class="strip-icon">◷</span><strong>Defined pilot retention</strong><p>Detailed trip records retained for 30 days.</p></div>
+          </article>
+        </section>
+
+        <section class="view" id="school" data-view-title="School transport dashboard">
+          <div class="notice notice-action"><span class="notice-icon">!</span><div><strong>7 safety signals need school review</strong><p>Review active alerts, complaint handling and vehicle checklist reminders for the registered school fleet.</p></div><button class="outline-button" type="button" data-scroll-target="school-alerts">Open safety queue</button></div>
+          <div class="stats-grid">
+            <article class="stat-card"><span>Registered vehicles</span><strong id="school-registered">12</strong><small id="school-active-trips">3 on official trips</small></article>
+            <article class="stat-card caution"><span>Active safety signals</span><strong id="school-alert-total">7</strong><small>Across registered fleet</small></article>
+            <article class="stat-card"><span>Unresolved reports</span><strong id="school-complaints">4</strong><small>Transport team queue</small></article>
+            <article class="stat-card"><span>Checklist reminders</span><strong id="school-checklist-reminders">2</strong><small>Before next trip</small></article>
+          </div>
+
+          <div class="section-heading"><div><span class="eyebrow">School fleet monitor</span><h2>All registered vehicles</h2></div><span class="table-key"><i class="key-dot active"></i> Active trip <i class="key-dot warning"></i> Review needed</span></div>
+          <article class="surface table-wrap"><table><thead><tr><th>Vehicle & crew</th><th>Official trip</th><th>Live status</th><th>Safety / compliance</th><th></th></tr></thead><tbody id="school-vehicle-rows">
+            <tr><td><strong>JK01 AB 2411</strong><small>Firdous Ahmad · attendant listed</small></td><td>Morning route A</td><td><span class="status-pill active">Active</span></td><td><span class="status-pill okay">On planned route</span></td><td><button class="row-button" type="button">View</button></td></tr>
+            <tr><td><strong>JK01 CD 5527</strong><small>Imran Khan · attendant listed</small></td><td>Morning route B</td><td><span class="status-pill active">Active</span></td><td><span class="status-pill warning">Overspeed alert</span></td><td><button class="row-button" type="button">Review</button></td></tr>
+            <tr><td><strong>JK01 EF 8849</strong><small>Yawar Mir · attendant listed</small></td><td>Morning route C</td><td><span class="status-pill active">Active</span></td><td><span class="status-pill danger">Route deviation</span></td><td><button class="row-button" type="button">Review</button></td></tr>
+            <tr><td><strong>JK01 GH 3116</strong><small>Bilal Shah · attendant listed</small></td><td>Not started</td><td><span class="status-pill muted">Inactive</span></td><td><span class="status-pill warning">Checklist reminder</span></td><td><button class="row-button" type="button">View</button></td></tr>
+          </tbody></table></article>
+
+          <div class="grid-two school-grid">
+            <article class="surface card-pad" id="school-alerts">
+              <div class="card-heading compact"><div><span class="eyebrow">Active safety queue</span><h2>Core safety alerts</h2></div><span class="count-badge alert-count">7 open</span></div>
+              <ul class="safety-list" id="safety-list"></ul>
+            </article>
+
+            <div class="stacked-cards">
+              <article class="surface card-pad">
+                <div class="card-heading compact"><div><span class="eyebrow">Complaint handling</span><h2>Transport reports</h2></div><button class="text-button" type="button">View all →</button></div>
+                <div id="school-complaint-list"></div>
+              </article>
+              <article class="surface card-pad">
+                <div class="card-heading compact"><div><span class="eyebrow">Vehicle safety checklist</span><h2>Before-trip reminders</h2></div><span class="count-badge">2 due</span></div>
+                <div id="school-checklist-list"></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="rto" data-view-title="RTO safety & compliance summary">
+          <div class="notice notice-private"><span class="notice-icon">✓</span><div><strong>Summary and compliance access only</strong><p>This view has no live map, child information or parent-level tracking. It supports risk-based inspection review.</p></div></div>
+          <div class="stats-grid rto-stats">
+            <article class="stat-card"><span>Registered school fleet</span><strong id="rto-fleet">38</strong><small id="rto-schools">8 pilot schools</small></article>
+            <article class="stat-card"><span>Average compliance score</span><strong id="rto-compliance">82<span class="unit">/100</span></strong><small>Fleet safety readiness</small></article>
+            <article class="stat-card caution"><span>Inspection due</span><strong id="rto-inspections">6</strong><small>High-risk review list</small></article>
+            <article class="stat-card caution"><span>Pending / expired documents</span><strong id="rto-documents">9</strong><small>Across registered vehicles</small></article>
+          </div>
+
+          <div class="grid-two rto-grid">
+            <article class="surface card-pad">
+              <div class="card-heading compact"><div><span class="eyebrow">Risk signals</span><h2>High-risk vehicles requiring review</h2></div><span class="count-badge alert-count">6 due</span></div>
+              <ul class="risk-list" id="rto-risk-list"></ul>
+            </article>
+
+            <article class="surface card-pad trend-card">
+              <div class="card-heading compact"><div><span class="eyebrow">Complaint trends</span><h2>Reports received & resolved</h2></div><span class="trend-key"><i></i> Received <i></i> Resolved</span></div>
+              <div class="bar-chart" aria-label="Seven-day complaint trend"><div class="bar-set"><span style="--received:31%;--resolved:18%"></span><small>M</small></div><div class="bar-set"><span style="--received:55%;--resolved:38%"></span><small>T</small></div><div class="bar-set"><span style="--received:42%;--resolved:42%"></span><small>W</small></div><div class="bar-set"><span style="--received:73%;--resolved:48%"></span><small>T</small></div><div class="bar-set"><span style="--received:52%;--resolved:62%"></span><small>F</small></div><div class="bar-set"><span style="--received:20%;--resolved:28%"></span><small>S</small></div><div class="bar-set"><span style="--received:30%;--resolved:35%"></span><small>S</small></div></div>
+              <div class="trend-summary"><div><strong id="complaints-received">18</strong><span>received this week</span></div><div><strong id="complaints-resolved">14</strong><span>resolved this week</span></div><div><strong id="complaints-open">4</strong><span>open for follow-up</span></div></div>
+            </article>
+          </div>
+
+          <div class="section-heading"><div><span class="eyebrow">Compliance overview</span><h2>Fleet inspection priorities</h2></div><span class="quiet-note">Weekly pilot review signals</span></div>
+          <article class="surface table-wrap"><table><thead><tr><th>School / vehicle</th><th>Compliance score</th><th>Document status</th><th>Repeat safety signals</th><th>Inspection</th></tr></thead><tbody id="rto-vehicle-rows">
+            <tr><td><strong>Pine Valley School</strong><small>JK01 CD 5527</small></td><td><div class="score"><span style="--score:61%"></span><b>61</b></div></td><td><span class="status-pill warning">Pending</span></td><td>Overspeeding · complaints</td><td><span class="inspection-tag">Due</span></td></tr>
+            <tr><td><strong>Lakeview Public School</strong><small>JK01 EF 8849</small></td><td><div class="score"><span style="--score:65%"></span><b>65</b></div></td><td><span class="status-pill warning">Expiring</span></td><td>Route deviations</td><td><span class="inspection-tag">Due</span></td></tr>
+            <tr><td><strong>Northgate School</strong><small>JK01 AB 2411</small></td><td><div class="score"><span style="--score:93%"></span><b>93</b></div></td><td><span class="status-pill okay">Current</span></td><td>No repeat flags</td><td><span class="inspection-tag neutral">Not due</span></td></tr>
+          </tbody></table></article>
+        </section>
+
+        <section class="view" id="driver" data-view-title="Driver official trip app">
+          <div class="driver-hero">
+            <div><span class="eyebrow">JK01 AB 2411 · Morning route A</span><h2 id="driver-state-title">Official school trip is active</h2><p id="driver-state-text">Location and bus status are shared only for this official trip.</p></div>
+            <span class="driver-status" id="driver-status">Official trip active</span>
+          </div>
+          <div class="notice notice-action driver-notice"><span class="notice-icon">!</span><div><strong>Safety first: do not use the phone while driving</strong><p>Mount the phone safely. Start before movement, end after completion, and use SOS only in an emergency.</p></div></div>
+          <div class="driver-layout">
+            <article class="surface card-pad driver-controls">
+              <span class="eyebrow">Official school trip</span>
+              <h2>Trip control</h2>
+              <p class="quiet-note">Location is shared only while this trip is active. The app does not track children.</p>
+              <div class="trip-control-buttons"><button class="primary-button large" id="start-trip" type="button" disabled>Start trip</button><button class="outline-button large" id="end-trip" type="button">End trip</button></div>
+              <button class="outline-button test-location-button" id="send-demo-gps" type="button">Send test GPS update</button>
+              <button class="sos-button" id="sos-button" type="button">SOS <span>Send emergency alert to school</span></button>
+              <p class="form-result" id="driver-result" aria-live="polite"></p>
+            </article>
+            <article class="surface card-pad">
+              <div class="card-heading compact"><div><span class="eyebrow">Vehicle safety checklist</span><h2>Before trip start</h2></div><span class="count-badge" id="checklist-state">4 checks</span></div>
+              <div class="driver-checklist">
+                <label><input type="checkbox" class="pretrip-check" checked /><span>Driver and attendant are listed for this route</span></label>
+                <label><input type="checkbox" class="pretrip-check" checked /><span>First-aid kit is available</span></label>
+                <label><input type="checkbox" class="pretrip-check" checked /><span>Speed governor check is complete</span></label>
+                <label><input type="checkbox" class="pretrip-check" checked /><span>Required vehicle documents are current</span></label>
+              </div>
+              <p class="quiet-note">The school can review this readiness record and compliance reminder.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="login-overlay" id="login-overlay" role="dialog" aria-modal="true" aria-labelledby="login-title">
+      <form class="login-card" id="login-form">
+        <span class="brand-mark">SB</span>
+        <span class="eyebrow">Safe School Bus Kashmir</span>
+        <h2 id="login-title">Sign in to the pilot portal</h2>
+        <p>Choose a demo role to use the matching role-limited dashboard and APIs.</p>
+        <label>Role<select id="login-role"><option value="parent">Parent</option><option value="driver">Driver</option><option value="school">School transport team</option><option value="rto">RTO administrator</option></select></label>
+        <label>Email<input id="login-email" type="email" required value="parent@demo.local" autocomplete="username" /></label>
+        <label>Password<input id="login-password" type="password" required value="Demo@123" autocomplete="current-password" /></label>
+        <button class="primary-button login-button" type="submit">Sign in</button>
+        <p class="login-error" id="login-error" aria-live="polite"></p>
+        <small>Demo password for every role: <strong>Demo@123</strong></small>
+      </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
