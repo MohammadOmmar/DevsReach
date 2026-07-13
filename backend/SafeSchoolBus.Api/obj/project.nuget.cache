@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mkirUccMm5M=",
+  "dgSpecHash": "+lKEA0w2otc=",
   "success": true,
-  "projectFilePath": "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
+  "projectFilePath": "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moham\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
     "C:\\Users\\moham\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.0\\microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
@@ -29,9 +29,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'Microsoft.IdentityModel.JsonWebTokens' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
-      "projectPath": "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
+      "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
       "warningLevel": 1,
-      "filePath": "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
+      "filePath": "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
       "libraryId": "Microsoft.IdentityModel.JsonWebTokens",
       "targetGraphs": [
         "net10.0",
@@ -42,9 +42,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'Npgsql' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-x9vc-6hfv-hg8c",
-      "projectPath": "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
+      "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
       "warningLevel": 1,
-      "filePath": "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
+      "filePath": "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
       "libraryId": "Npgsql",
       "targetGraphs": [
         "net10.0",
@@ -55,9 +55,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
-      "projectPath": "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
+      "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
       "warningLevel": 1,
-      "filePath": "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
+      "filePath": "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net10.0",

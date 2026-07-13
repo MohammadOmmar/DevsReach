@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj": {}
+    "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj": {}
   },
   "projects": {
-    "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj": {
+    "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
+        "projectUniqueName": "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
         "projectName": "SafeSchoolBus.Api",
-        "projectPath": "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
+        "projectPath": "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\SafeSchoolBus.Api.csproj",
         "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\obj\\",
+        "outputPath": "C:\\Users\\moham\\OneDrive\\Desktop\\Hackathon\\Bus Tracker\\backend\\SafeSchoolBus.Api\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
