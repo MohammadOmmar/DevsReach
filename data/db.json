@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": "user-21d524d8-d56e-4461-86b0-4da95af9b476",
+      "role": "parent",
+      "name": "Test User",
+      "email": "test@example.com",
+      "passwordHash": "$2b$10$6xCSbowNxVS8CmoaKGbe/uZOTbL0yqiQfURFRJw/2ObNTmHYcQqLO",
+      "schoolId": "school--7de6c95",
+      "driverId": null,
+      "vehicleIds": []
+    }
+  ],
+  "schools": [],
+  "drivers": [],
+  "vehicles": [],
+  "routes": [],
+  "trips": [],
+  "alerts": [],
+  "complaints": [],
+  "subscriptions": [],
+  "pendingRegistrations": [
+    {
+      "id": "pending-2ad92d45-cb13-4951-9642-3fac3c594e09",
+      "email": "mohammadommar2001@gmail.com",
+      "name": "M oMar",
+      "role": "parent",
+      "passwordHash": "$2b$10$HvhdrOg9f2g3G0kiG5SNi.7zPaxXPy3T3JJe6XAxSsyX.eVU/MzOa",
+      "verificationCode": "747233",
+      "createdAt": "2026-07-13T15:56:29.169Z"
+    },
+    {
+      "id": "pending-91b5e46b-bf2e-4442-a695-a42017de72a2",
+      "email": "mohammadommar2001@gmail.com",
+      "name": "m omar",
+      "role": "parent",
+      "passwordHash": "$2b$10$auPq3Dmsw/gOLT4U1dCUge8eo.82mTQFLDMoV7erLsckFqYTzDSoe",
+      "verificationCode": "284559",
+      "createdAt": "2026-07-13T16:11:10.403Z"
+    },
+    {
+      "id": "pending-e2bebba2-e512-4d93-bb43-7d832a74d97a",
+      "email": "mohammadommar2001@gmail.com",
+      "name": "M omar",
+      "role": "parent",
+      "passwordHash": "$2b$10$zU8.TuNJV5idCEu6GdWOYeeq6mcmHPpkfWRlYgWVveyYHk5iYeFbi",
+      "verificationCode": "396953",
+      "createdAt": "2026-07-13T19:23:07.970Z"
+    }
+  ]
+}
