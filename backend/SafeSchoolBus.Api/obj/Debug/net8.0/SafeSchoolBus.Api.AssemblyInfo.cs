@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SafeSchoolBus.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3b1932ecc75b067effe728c926ec4c64e1fcf95")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e58699cee22e9fd18577d8c5f97864614e4a9883")]
 [assembly: System.Reflection.AssemblyProductAttribute("SafeSchoolBus.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SafeSchoolBus.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

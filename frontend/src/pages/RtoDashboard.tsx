@@ -130,7 +130,7 @@ export const RtoDashboard: React.FC = () => {
           </div>
 
           <div className="flex items-end justify-between h-28 px-2 border-b border-slate-200 pb-1">
-            {[['M', 35, 20], ['T', 55, 35], ['W', 42, 42], ['T', 70, 48], ['F', 52, 60], ['S', 18, 22], ['S', 30, 32]].map(([day, rec, res], i) => (
+            {[['M', 35, 20], ['T', 55, 35], ['W', 42, 42], ['T', 70, 48], ['F', 52, 60], ['S', 18, 22], ['S', 30, 32]].map(([day, rec, res]) => (
               <div key={String(day)} className="flex flex-col items-center gap-1 w-7">
                 <div className="w-2 bg-teal-500 rounded-t-sm" style={{ height: `${rec}px` }}></div>
                 <div className="w-2 bg-slate-300 rounded-t-sm" style={{ height: `${res}px` }}></div>

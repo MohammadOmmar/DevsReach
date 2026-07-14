@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
-import { Shield, Mail, Lock, User, Car, School, UserCheck } from 'lucide-react';
+import { Shield, User, Car, School, UserCheck } from 'lucide-react';
 
 type AuthMode = 'login' | 'register' | 'verify';
 
@@ -152,6 +152,73 @@ export const Login: React.FC = () => {
             </div>
           </form>
         )}
+
+        {/* Demo Login Section */}
+        <div className="mt-6 pt-6 border-t border-slate-200">
+          <div className="bg-gradient-to-br from-teal-50 to-blue-50 border border-teal-200 rounded-lg p-4">
+            <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider mb-3 flex items-center gap-2">
+              <Shield size={14} className="text-teal-600" />
+              Demo Accounts
+            </h3>
+            <p className="text-[10px] text-slate-600 mb-3">Click below to login with demo credentials:</p>
+            <div className="space-y-2">
+              <button
+                type="button"
+                onClick={() => { setEmail('parent@demo.com'); setPassword('demo123'); setRole('parent'); }}
+                className="w-full bg-white hover:bg-teal-50 border-2 border-teal-200 hover:border-teal-400 text-slate-700 hover:text-teal-700 font-bold py-2 px-3 rounded-lg text-xs transition-all flex items-center gap-2"
+              >
+                <User size={14} />
+                <div className="text-left flex-1">
+                  <div className="font-bold">Parent Demo</div>
+                  <div className="text-[9px] text-slate-500">M Omar - View child's bus</div>
+                </div>
+              </button>
+              <button
+                type="button"
+                onClick={() => { setEmail('school@demo.com'); setPassword('demo123'); setRole('school'); }}
+                className="w-full bg-white hover:bg-blue-50 border-2 border-blue-200 hover:border-blue-400 text-slate-700 hover:text-blue-700 font-bold py-2 px-3 rounded-lg text-xs transition-all flex items-center gap-2"
+              >
+                <School size={14} />
+                <div className="text-left flex-1">
+                  <div className="font-bold">School Admin Demo</div>
+                  <div className="text-[9px] text-slate-500">M Omar - Manage fleet</div>
+                </div>
+              </button>
+              <button
+                type="button"
+                onClick={() => { setEmail('driver@demo.com'); setPassword('demo123'); setRole('driver'); }}
+                className="w-full bg-white hover:bg-orange-50 border-2 border-orange-200 hover:border-orange-400 text-slate-700 hover:text-orange-700 font-bold py-2 px-3 rounded-lg text-xs transition-all flex items-center gap-2"
+              >
+                <Car size={14} />
+                <div className="text-left flex-1">
+                  <div className="font-bold">Driver Demo</div>
+                  <div className="text-[9px] text-slate-500">M Omar - Trip console</div>
+                </div>
+              </button>
+              <button
+                type="button"
+                onClick={() => { setEmail('rto@demo.com'); setPassword('demo123'); setRole('rto'); }}
+                className="w-full bg-white hover:bg-purple-50 border-2 border-purple-200 hover:border-purple-400 text-slate-700 hover:text-purple-700 font-bold py-2 px-3 rounded-lg text-xs transition-all flex items-center gap-2"
+              >
+                <UserCheck size={14} />
+                <div className="text-left flex-1">
+                  <div className="font-bold">RTO Admin Demo</div>
+                  <div className="text-[9px] text-slate-500">M Omar - Fleet oversight</div>
+                </div>
+              </button>
+            </div>
+            <div className="mt-3 pt-2 border-t border-teal-200">
+              <p className="text-[9px] text-slate-500 text-center">
+                <strong>Demo Credentials (Password same for all):</strong><br />
+                Parent: parent@demo.com<br />
+                School: school@demo.com<br />
+                Driver: driver@demo.com<br />
+                RTO: rto@demo.com<br />
+                Password: demo123
+              </p>
+            </div>
+          </div>
+        </div>
 
         {mode === 'register' && (
           <form onSubmit={handleRequestVerification} className="space-y-4">

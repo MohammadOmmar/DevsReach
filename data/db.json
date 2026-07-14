@@ -1,51 +1,183 @@
 {
   "users": [
     {
-      "id": "user-21d524d8-d56e-4461-86b0-4da95af9b476",
+      "id": "user-parent-1784008422721",
       "role": "parent",
-      "name": "Test User",
-      "email": "test@example.com",
-      "passwordHash": "$2b$10$6xCSbowNxVS8CmoaKGbe/uZOTbL0yqiQfURFRJw/2ObNTmHYcQqLO",
-      "schoolId": "school--7de6c95",
+      "name": "M Omar (Parent)",
+      "email": "parent@demo.com",
+      "passwordHash": "$2b$10$4PGoSktRUg4R7S0lUMPJOequzR0ml35EAfmRBOoDaPEyMc7FKvXPm",
+      "schoolId": "school-demo-001",
+      "driverId": null,
+      "vehicleIds": [
+        "vehicle-demo-001"
+      ],
+      "address": "Bemina, Srinagar, Kashmir",
+      "phone": "+91-7000000000"
+    },
+    {
+      "id": "user-school-1784008422721",
+      "role": "school",
+      "name": "M Omar (School Admin)",
+      "email": "school@demo.com",
+      "passwordHash": "$2b$10$4PGoSktRUg4R7S0lUMPJOequzR0ml35EAfmRBOoDaPEyMc7FKvXPm",
+      "schoolId": "school-demo-001",
+      "driverId": null,
+      "vehicleIds": []
+    },
+    {
+      "id": "user-driver-1784008422721",
+      "role": "driver",
+      "name": "M Omar (Driver)",
+      "email": "driver@demo.com",
+      "passwordHash": "$2b$10$4PGoSktRUg4R7S0lUMPJOequzR0ml35EAfmRBOoDaPEyMc7FKvXPm",
+      "schoolId": "school-demo-001",
+      "driverId": "driver-demo-001",
+      "vehicleIds": [
+        "vehicle-demo-001"
+      ]
+    },
+    {
+      "id": "user-rto-1784008422721",
+      "role": "rto",
+      "name": "M Omar (RTO Admin)",
+      "email": "rto@demo.com",
+      "passwordHash": "$2b$10$4PGoSktRUg4R7S0lUMPJOequzR0ml35EAfmRBOoDaPEyMc7FKvXPm",
+      "schoolId": null,
       "driverId": null,
       "vehicleIds": []
     }
   ],
-  "schools": [],
-  "drivers": [],
-  "vehicles": [],
-  "routes": [],
-  "trips": [],
-  "alerts": [],
+  "schools": [
+    {
+      "id": "school-demo-001",
+      "name": "Demo Public School",
+      "address": "Bemina, Srinagar, Kashmir",
+      "contactEmail": "school@demo.com",
+      "contactPhone": "+91-7000000000",
+      "createdAt": "2026-07-14T05:53:42.721Z"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "driver-demo-001",
+      "name": "M Omar (Driver)",
+      "licenseNumber": "DL-DEMO-001",
+      "phone": "+91-7000000000",
+      "userId": "user-driver-1784008422721",
+      "createdAt": "2026-07-14T05:53:42.722Z"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "vehicle-demo-001",
+      "schoolId": "school-demo-001",
+      "driverId": "driver-demo-001",
+      "registration": "JK01-DEMO-1234",
+      "attendant": "Demo Attendant",
+      "documentsStatus": "current",
+      "complianceScore": 100,
+      "checklist": {
+        "attendant": true,
+        "firstAid": true,
+        "speedGovernor": true,
+        "documents": true
+      },
+      "createdAt": "2026-07-14T05:53:42.722Z"
+    }
+  ],
+  "routes": [
+    {
+      "id": "route-demo-001",
+      "schoolId": "school-demo-001",
+      "name": "Bemina to School Route",
+      "stops": [
+        {
+          "name": "Bemina Main Market",
+          "lat": 34.0836,
+          "lng": 74.7973
+        },
+        {
+          "name": "Bemina Post Office",
+          "lat": 34.0843,
+          "lng": 74.7981
+        },
+        {
+          "name": "School Gate",
+          "lat": 34.085,
+          "lng": 74.799
+        }
+      ],
+      "path": [
+        {
+          "lat": 34.0836,
+          "lng": 74.7973
+        },
+        {
+          "lat": 34.0843,
+          "lng": 74.7981
+        },
+        {
+          "lat": 34.085,
+          "lng": 74.799
+        }
+      ],
+      "speedLimitKmh": 40,
+      "deviationThresholdM": 120,
+      "plannedDurationMin": 30,
+      "createdAt": "2026-07-14T05:53:42.722Z"
+    }
+  ],
+  "trips": [
+    {
+      "id": "trip-demo-001",
+      "vehicleId": "vehicle-demo-001",
+      "routeId": "route-demo-001",
+      "schoolId": "school-demo-001",
+      "driverId": "driver-demo-001",
+      "status": "active",
+      "startedAt": "2026-07-14T05:53:42.722Z",
+      "expectedArrivalAt": "2026-07-14T06:23:42.722Z",
+      "endedAt": null,
+      "stoppedSince": null,
+      "lastLocation": {
+        "lat": 34.0843,
+        "lng": 74.7981,
+        "speedKmh": 25,
+        "accuracy": 10,
+        "recordedAt": "2026-07-14T05:53:42.722Z"
+      },
+      "locations": [
+        {
+          "lat": 34.0843,
+          "lng": 74.7981,
+          "speedKmh": 25,
+          "accuracy": 10,
+          "recordedAt": "2026-07-14T05:53:42.722Z"
+        }
+      ],
+      "checklist": {
+        "attendant": true,
+        "firstAid": true,
+        "speedGovernor": true,
+        "documents": true
+      }
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert-f54e4637-d68e-4777-b7b4-97c5d2d3cd64",
+      "type": "gps_inactive",
+      "severity": "medium",
+      "vehicleId": "vehicle-demo-001",
+      "schoolId": "school-demo-001",
+      "tripId": "trip-demo-001",
+      "status": "open",
+      "title": "App inactive / GPS off",
+      "message": "JK01-DEMO-1234 has no current driver app location signal.",
+      "createdAt": "2026-07-14T05:58:54.206Z"
+    }
+  ],
   "complaints": [],
   "subscriptions": [],
-  "pendingRegistrations": [
-    {
-      "id": "pending-2ad92d45-cb13-4951-9642-3fac3c594e09",
-      "email": "mohammadommar2001@gmail.com",
-      "name": "M oMar",
-      "role": "parent",
-      "passwordHash": "$2b$10$HvhdrOg9f2g3G0kiG5SNi.7zPaxXPy3T3JJe6XAxSsyX.eVU/MzOa",
-      "verificationCode": "747233",
-      "createdAt": "2026-07-13T15:56:29.169Z"
-    },
-    {
-      "id": "pending-91b5e46b-bf2e-4442-a695-a42017de72a2",
-      "email": "mohammadommar2001@gmail.com",
-      "name": "m omar",
-      "role": "parent",
-      "passwordHash": "$2b$10$auPq3Dmsw/gOLT4U1dCUge8eo.82mTQFLDMoV7erLsckFqYTzDSoe",
-      "verificationCode": "284559",
-      "createdAt": "2026-07-13T16:11:10.403Z"
-    },
-    {
-      "id": "pending-e2bebba2-e512-4d93-bb43-7d832a74d97a",
-      "email": "mohammadommar2001@gmail.com",
-      "name": "M omar",
-      "role": "parent",
-      "passwordHash": "$2b$10$zU8.TuNJV5idCEu6GdWOYeeq6mcmHPpkfWRlYgWVveyYHk5iYeFbi",
-      "verificationCode": "396953",
-      "createdAt": "2026-07-13T19:23:07.970Z"
-    }
-  ]
+  "pendingRegistrations": []
 }
